@@ -14,18 +14,26 @@ public class ComparerService {
         //get length of 2nd Parameter
 
         String test;
+        int firstWordLength = firstWord.length();
         int secondWordLength = secondWord.length();
         int positionFirstWord = secondWordLength + 1;
         StringBuilder result = new StringBuilder();
 
-        log.info("Postion im ersten Wort: "+firstWord.charAt(positionFirstWord));
 
         log.info("Länge des firstWord: " + firstWord.length());
-        log.debug("Debug - Länge des firstWord: " + firstWord.length());
 
-        for (int i = 0; i < secondWordLength; i++) {
-            result.append(firstWord.charAt(positionFirstWord)).toString();
-            positionFirstWord++;
+        if(firstWordLength>secondWordLength+1){
+            log.info("Postion im ersten Wort: "+firstWord.charAt(positionFirstWord));
+            for (int i = 0; i < secondWordLength; i++) {
+                result.append(firstWord.charAt(positionFirstWord)).toString();
+                positionFirstWord++;
+            }
+        }
+        else{
+            for (int i = 0; i < secondWordLength; i++) {
+                result.append(firstWord.charAt(i)).toString();
+                positionFirstWord++;
+            }
         }
 
         log.info ("result: "+result);
