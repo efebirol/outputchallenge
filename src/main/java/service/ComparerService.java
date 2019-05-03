@@ -20,7 +20,8 @@ public class ComparerService {
         StringBuilder result = new StringBuilder();
 
 
-        log.info("Länge des firstWord: " + firstWord.length());
+        log.info("Länge des firstWord: " + firstWordLength);
+        log.info("Länge des firstWord: " + secondWordLength);
 
         if(firstWordLength>secondWordLength+1){
             log.info("Postion im ersten Wort: "+firstWord.charAt(positionFirstWord));
